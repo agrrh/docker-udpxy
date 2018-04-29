@@ -1,6 +1,7 @@
 FROM buildpack-deps as builder
 
-ENV UDPXY_SRC_URL=http://www.udpxy.com/download/udpxy/udpxy-src.tar.gz
+ARG UDPXY_SRC_URL
+ENV UDPXY_SRC_URL=${UDPXY_SRC_URL:-"http://www.udpxy.com/download/udpxy/udpxy-src.tar.gz"}
 
 WORKDIR /tmp
 RUN wget -O udpxy-src.tar.gz ${UDPXY_SRC_URL}
