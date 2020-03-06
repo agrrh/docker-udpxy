@@ -13,4 +13,5 @@ FROM debian:stable
 COPY --from=builder /usr/local/bin/udpxy /usr/local/bin/udpxy
 COPY --from=builder /usr/local/bin/udpxrec /usr/local/bin/udpxrec
 
-CMD ["/usr/local/bin/udpxy", "-v", "-T", "-p", "4022"]
+ENTRYPOINT ["/usr/local/bin/udpxy"]
+CMD ["-v", "-T", "-p", "4022"]
